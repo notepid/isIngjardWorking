@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: rgb(40, 78, 78);
+            color: rgb(235, 232, 232);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Ingjard working?</h1>
+    <h2 id="yesno">Nope.</h2>
+    <script>
+        var d = new Date();
+
+        switch (d.getDay()) {
+            case 1:
+                if (d.getHours() < 12)
+                    document.getElementById("yesno").innerHTML = "No, but he will start at 12.";
+                else if (d.getHours() >= 12 && d.getHours() <= 16)
+                    document.getElementById("yesno").innerHTML = "Yes!";
+                else
+                    document.getElementById("yesno").innerHTML = "Nope, not until Wednesday.";
+                break;
+            case 3:
+                if (d.getHours() < 12)
+                    document.getElementById("yesno").innerHTML = "No, but he will start at 12.";
+                else if (d.getHours() >= 12 && d.getHours() <= 16)
+                    document.getElementById("yesno").innerHTML = "Yes!";
+                else
+                    document.getElementById("yesno").innerHTML = "Nope, not until tomorrow.";
+                break;
+            case 4:
+                if (d.getHours() < 8)
+                    document.getElementById("yesno").innerHTML = "No, but he will start at 12.";
+                else if (d.getHours() >= 8 && (d.getHours() <= 12 && d.getMinutes() <= 30))
+                    document.getElementById("yesno").innerHTML = "Yes!";
+                else
+                    document.getElementById("yesno").innerHTML = "Nope, not until Monday.";
+                break;
+            default:
+                document.getElementById("yesno").innerHTML = "Nope!";
+        }
+    </script>
+</body>
+
+</html>
