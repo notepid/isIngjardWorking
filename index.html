@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <meta http-equiv="refresh" content="300">
     <style>
         body {
             background-color: rgb(40, 78, 78);
@@ -22,6 +23,14 @@
         div {
             text-align: center;
         }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .notworking { background-color: lightslategray; }
+        .working { background-color: rgb(189, 238, 196); }
     </style>
 
     <title>Ingjard working?</title>
@@ -29,8 +38,65 @@
 
 <body>
 
-    <h1>Ingjard working?</h1>
-    <h2 id="yesno">Nope.</h2>
+    <h2>Ingjard working?</h1>
+    <h1 id="yesno"></h2>
+    
+    <table style="width:80%" class="center">
+        <colgroup>
+            <col span="1" style="width: 5%;">
+            <col span="1" style="width: 15%;">
+            <col span="1" style="width: 15%;">
+            <col span="1" style="width: 15%;">
+            <col span="1" style="width: 15%;">
+            <col span="1" style="width: 15%;">
+         </colgroup>
+        
+        <tr>
+            <th></th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td id="c1-8" class="notworking"></td><td id="c2-8" class="notworking"></td><td id="c3-8" class="notworking"></td><td id="c4-8" class="working"></td><td id="c5-8" class="notworking"></td>
+        </tr>
+        <tr>
+            <td>09</td>
+            <td id="c1-9" class="notworking"></td><td id="c2-9" class="notworking"></td><td id="c3-9" class="notworking"></td><td id="c4-9" class="working"></td><td id="c5-9" class="notworking"></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td id="c1-10" class="notworking"></td><td id="c2-10" class="notworking"></td><td id="c3-10" class="notworking"></td><td id="c4-10" class="working"></td><td id="c5-10" class="notworking"></td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td id="c1-11" class="notworking"></td><td id="c2-11" class="notworking"></td><td id="c3-11" class="notworking"></td><td id="c4-11" class="working"></td><td id="c5-1" class="notworking"></td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td id="c1-12" class="working"></td><td id="c2-12" class="notworking"></td><td id="c3-12" class="working"></td><td id="c4-12" class="working"></td><td id="c5-12" class="notworking"></td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td id="c1-13" class="working"></td><td id="c2-13" class="notworking"></td><td id="c3-13" class="working"></td><td id="c4-13" class="notworking"></td><td id="c5-13" class="notworking"></td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td id="c1-14" class="working"></td><td id="c2-14" class="notworking"></td><td id="c3-14" class="working"></td><td id="c4-14" class="notworking"></td><td id="c5-14" class="notworking"></td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td id="c1-15" class="working"></td><td id="c2-15" class="notworking"></td><td id="c3-15" class="working"></td><td id="c4-15" class="notworking"></td><td id="c5-15" class="notworking"></td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td id="c1-16" class="working"></td><td id="c2-16" class="notworking"></td><td id="c3-16" class="working"></td><td id="c4-16" class="notworking"></td><td id="c5-16" class="notworking"></td>
+        </tr>
+    </table>
+
     <script>
         var d = new Date();
 
@@ -62,7 +128,11 @@
             default:
                 document.getElementById("yesno").innerHTML = "Nope!";
         }
+        var cellElement = document.getElementById("c" + d.getDay() + "-" + d.getHours());
+        if (cellElement)
+            cellElement.style.backgroundColor = "lightskyblue"
     </script>
+
 </body>
 
 </html>
